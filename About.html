@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Domwood</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Google Fonts for better typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    
+    <!-- Animate on Scroll CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <style>
+        /* --- Custom CSS for Styling --- */
+
+        /* 1. General Body & Typography */
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f8f9fa;
+            color: #343a40;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+        }
+
+        .section-padding {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            margin-bottom: 60px;
+            text-align: center;
+        }
+
+        /* 2. Hero Section */
+        .hero-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://via.placeholder.com/1920x800/636f83/ffffff?text=Our+Workspace') no-repeat center center;
+            background-size: cover;
+            color: white;
+            padding: 150px 0;
+            text-align: center;
+        }
+
+        .hero-section h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+        }
+
+        .hero-section p {
+            font-size: 1.25rem;
+            max-width: 600px;
+            margin: 20px auto 0;
+            font-weight: 300;
+        }
+        
+        /* 3. Interactive Timeline */
+        .timeline {
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 6px;
+            background-color: #0d6efd;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -3px;
+        }
+
+        .timeline-container {
+            padding: 10px 40px;
+            position: relative;
+            background-color: inherit;
+            width: 50%;
+        }
+
+        .timeline-container.left {
+            left: 0;
+        }
+
+        .timeline-container.right {
+            left: 50%;
+        }
+
+        .timeline-container::after {
+            content: '';
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            right: -17px;
+            background-color: white;
+            border: 4px solid #0d6efd;
+            top: 15px;
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        .right::after {
+            left: -16px;
+        }
+
+        .timeline-content {
+            padding: 20px 30px;
+            background-color: white;
+            position: relative;
+            border-radius: 6px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        /* Responsive timeline */
+        @media screen and (max-width: 768px) {
+            .timeline::after {
+                left: 31px;
+            }
+            .timeline-container {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+            .timeline-container.right {
+                left: 0%;
+            }
+            .timeline-container.left::after, .timeline-container.right::after {
+                left: 15px;
+            }
+        }
+        
+        /* 4. Meet The Team Section */
+        .team-card {
+            border: none;
+            border-radius: 10px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .team-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+
+        .team-card .card-img-top {
+            border-radius: 10px 10px 0 0;
+        }
+
+        .team-card .card-body {
+            padding: 25px;
+        }
+        
+        /* Card overlay for social links */
+        .team-img-container {
+            position: relative;
+        }
+
+        .team-social {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: rgba(13, 110, 253, 0.8);
+            padding: 10px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .team-card:hover .team-social {
+            opacity: 1;
+        }
+
+        .team-social a {
+            color: white;
+            font-size: 1.2rem;
+            transition: transform 0.2s ease;
+        }
+
+        .team-social a:hover {
+            transform: scale(1.2);
+        }
+
+        /* 5. Our Values Section */
+        .value-icon {
+            font-size: 3rem;
+            color: #0d6efd;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- HERO SECTION -->
+    <header class="hero-section">
+        <div class="container" data-aos="fade-in">
+            <h1>We Are Domwood</h1>
+            <p class="lead">Crafting digital experiences with passion, precision, and a commitment to excellence. Discover the story behind our code and creativity.</p>
+        </div>
+    </header>
+
+    <!-- OUR STORY SECTION -->
+    <section id="our-story" class="section-padding">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6" data-aos="fade-right">
+                    <img src="https://via.placeholder.com/540x400/adb5bd/ffffff?text=Our+Journey+Begins" class="img-fluid rounded shadow-sm" alt="A photo representing the company's journey">
+                </div>
+                <div class="col-lg-6" data-aos="fade-left">
+                    <h2 class="mb-4">Our Story</h2>
+                    <p>
+                        At Domwood Products, we believe spaces should reflect individuality. Founded in 2010, our team of skilled designers and master carpenters blends artistry with precision to deliver exceptional interiors and handcrafted furniture. With a passion for innovation and an eye for detail, we turn your vision into reality—one stitch, stroke, and grain at a time.
+                    </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- TIMELINE SECTION -->
+    <section id="timeline" class="section-padding bg-light">
+        <div class="container">
+            <h2 class="section-title">Our Milestones</h2>
+            <div class="timeline">
+                <div class="timeline-container left" data-aos="fade-right">
+                    <div class="timeline-content">
+                        <h3>2020 - The Beginning</h3>
+                        <p>Domwood is founded by a group of friends with a shared vision for innovative web solutions.</p>
+                    </div>
+                </div>
+                <div class="timeline-container right" data-aos="fade-left">
+                    <div class="timeline-content">
+                        <h3>2021 - First Major Client</h3>
+                        <p>We landed our first major project, building a comprehensive e-commerce platform from the ground up.</p>
+                    </div>
+                </div>
+                <div class="timeline-container left" data-aos="fade-right">
+                    <div class="timeline-content">
+                        <h3>2023 - Team Expansion</h3>
+                        <p>Our team doubled in size, bringing in new talent in UX design, digital marketing, and mobile development.</p>
+                    </div>
+                </div>
+                <div class="timeline-container right" data-aos="fade-left">
+                    <div class="timeline-content">
+                        <h3>2025 - New Headquarters</h3>
+                        <p>Moved into our new, state-of-the-art office to accommodate our growing team and foster collaboration.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MEET THE TEAM SECTION -->
+    <section id="team" class="section-padding">
+        <div class="container">
+            <h2 class="section-title">Meet Our Creative Team</h2>
+            <div class="row g-4">
+                <!-- Team Member 1 -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up">
+                    <div class="card team-card">
+                        <div class="team-img-container">
+                            <img src="https://via.placeholder.com/350x350/0d6efd/ffffff?text=Jane+Doe" class="card-img-top" alt="Headshot of Jane Doe">
+                            <div class="team-social">
+                                <!-- Replace with actual social links -->
+                                <a href="#"><i class="bi bi-twitter-x"></i></a>
+                                <a href="#"><i class="bi bi-linkedin"></i></a>
+                                <a href="#"><i class="bi bi-github"></i></a>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Jane Doe</h5>
+                            <p class="card-text text-muted">Lead Developer</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Team Member 2 -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card team-card">
+                        <div class="team-img-container">
+                             <img src="https://via.placeholder.com/350x350/198754/ffffff?text=John+Smith" class="card-img-top" alt="Headshot of John Smith">
+                             <div class="team-social">
+                                <a href="#"><i class="bi bi-twitter-x"></i></a>
+                                <a href="#"><i class="bi bi-linkedin"></i></a>
+                                <a href="#"><i class="bi bi-behance"></i></a>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">John Smith</h5>
+                            <p class="card-text text-muted">Creative Director</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Team Member 3 -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card team-card">
+                        <div class="team-img-container">
+                            <img src="https://via.placeholder.com/350x350/ffc107/343a40?text=Emily+Jones" class="card-img-top" alt="Headshot of Emily Jones">
+                            <div class="team-social">
+                                <a href="#"><i class="bi bi-twitter-x"></i></a>
+                                <a href="#"><i class="bi bi-linkedin"></i></a>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Emily Jones</h5>
+                            <p class="card-text text-muted">Project Manager</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- OUR VALUES SECTION -->
+    <section id="values" class="section-padding bg-light">
+        <div class="container">
+            <h2 class="section-title">Our Core Values</h2>
+            <div class="row text-center g-4">
+                <div class="col-md-4" data-aos="zoom-in">
+                    <div class="value-icon mb-3"><i class="bi bi-lightbulb-fill"></i></div>
+                    <h4>Innovation</h4>
+                    <p>We constantly seek better ways to solve problems and are not afraid to challenge the status quo.</p>
+                </div>
+                <div class="col-md-4" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="value-icon mb-3"><i class="bi bi-people-fill"></i></div>
+                    <h4>Collaboration</h4>
+                    <p>We believe the best results come from working together, both with our clients and within our team.</p>
+                </div>
+                <div class="col-md-4" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="value-icon mb-3"><i class="bi bi-shield-check"></i></div>
+                    <h4>Integrity</h4>
+                    <p>We are committed to transparency and honesty in everything we do, building trust with every project.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- JQuery and Bootstrap Bundle JS -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Animate on Scroll JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <script>
+        // --- JQuery for Interactivity ---
+
+        $(document).ready(function() {
+            // Initialize Animate on Scroll
+            // This adds the fade/zoom effects as you scroll
+            AOS.init({
+                duration: 800, // animation duration in ms
+                once: true,    // whether animation should happen only once
+                offset: 100,   // offset (in px) from the original trigger point
+            });
+
+           
+        });
+
+    </script>
+
+</body>
+</html>

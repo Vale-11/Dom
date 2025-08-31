@@ -1,0 +1,332 @@
+/* --- General Styling & Resets --- */
+:root {
+    /* YOUR ORIGINAL COLOR CODES ARE RESPECTED HERE */
+    --primary-color: #0A4D68; /* A sophisticated, deep blue */
+    --secondary-color: #FFC107; /* Kept for a vibrant accent */
+    --background-color: #FCF8F3; /* A warm, off-white for elegance */
+    --text-color: #333333;
+    --light-accent-bg: #F0F0F0; /* A soft grey for section backgrounds */
+
+    /* Fonts for an elegant, modern feel */
+    --font-primary: 'Garamond', 'Times New Roman', serif;
+    --font-secondary: 'Helvetica Neue', Arial, sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-secondary);
+    line-height: 1.7;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-size: 16px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 2rem;
+}
+
+h1, h2, h3 {
+    font-family: var(--font-primary);
+    font-weight: 400; /* Lighter weight for serif fonts looks more elegant */
+}
+
+
+/* --- Header & Navigation --- */
+.main-header {
+    background: rgba(252, 248, 243, 0.9); /* Semi-transparent on scroll */
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.main-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 0;
+}
+
+.nav-logo {
+    color: var(--primary-color);
+    font-size: 1.8rem;
+    font-family: var(--font-primary);
+    text-decoration: none;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    padding: 0 1.5rem;
+}
+
+.nav-links a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--primary-color);
+}
+
+
+/* --- Hero Section --- */
+.hero-section {
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: url('https://images.unsplash.com/photo-1616046229478-9901c5536a45?q=80&w=1400') no-repeat center center/cover;
+    color: #fff;
+    position: relative;
+}
+
+.hero-section::after { /* Overlay for readability */
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.4);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-title {
+    font-size: 4.5rem;
+    margin-bottom: 1rem;
+    font-family: var(--font-primary);
+}
+
+.hero-subtitle {
+    font-size: 1.3rem;
+    margin-bottom: 2.5rem;
+    max-width: 650px;
+    font-family: var(--font-secondary);
+}
+
+.highlight {
+    color: var(--secondary-color);
+}
+
+/* --- Buttons --- */
+.cta-button {
+    background: var(--primary-color);
+    color: #fff;
+    padding: 1rem 2.5rem;
+    border: 2px solid var(--primary-color);
+    border-radius: 5px;
+    font-size: 1.1rem;
+    font-family: var(--font-secondary);
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: transparent;
+    color: var(--primary-color);
+    transform: translateY(-3px);
+}
+
+.hero-section .cta-button {
+    background: var(--secondary-color);
+    border-color: var(--secondary-color);
+    color: #333;
+}
+.hero-section .cta-button:hover {
+    background-color: transparent;
+    color: var(--secondary-color);
+}
+
+/* --- General Content Sections --- */
+.content-section {
+    padding: 6rem 0;
+}
+
+.content-section-accent {
+    background: var(--light-accent-bg);
+    padding: 6rem 0;
+}
+
+.section-title {
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 4rem;
+    color: var(--primary-color);
+}
+
+.section-text {
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* --- Services Grid --- */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    text-align: center;
+}
+
+.service-card {
+    padding: 2.5rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.service-card:hover {
+    background-color: #fff;
+    border-color: var(--primary-color);
+}
+
+.service-card h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+/* --- Portfolio Grid --- */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+}
+
+.project-card {
+    background: #fff;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 5px;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+}
+
+.project-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    display: block;
+}
+
+.project-info {
+    padding: 1.5rem;
+}
+
+.project-info h3 {
+    margin-bottom: 0.5rem;
+    color: var(--primary-color);
+    font-size: 1.4rem;
+}
+
+
+/* --- Contact Form --- */
+.contact-form {
+    max-width: 700px;
+    margin: 3rem auto 0;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-family: var(--font-secondary);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+.error-message {
+    color: #d93025;
+    font-size: 0.9rem;
+    display: block;
+    margin-top: 0.2rem;
+}
+
+.form-group input.invalid,
+.form-group textarea.invalid {
+    border-color: #d93025;
+}
+
+
+/* --- Footer --- */
+.main-footer {
+    background: var(--primary-color);
+    color: #fff;
+    text-align: center;
+    padding: 2.5rem 0;
+}
+
+/* --- Animations on Scroll --- */
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.animate-on-scroll.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* --- Responsive Design --- */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none; /* For a real site, implement a hamburger menu here */
+    }
+    
+    .hero-title {
+        font-size: 2.8rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.1rem;
+    }
+
+    .section-title {
+        font-size: 2.2rem;
+    }
+}
